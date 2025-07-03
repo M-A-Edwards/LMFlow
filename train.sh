@@ -3,7 +3,7 @@
 
 # Parses arguments
 model_name_or_path=data4elm/Llama-400M-12L
-dataset_path=[PATH TO YOUR DATASET HERE]
+dataset_path=./data/wikitext-2-raw-v1
 # conversation_template=llama2
 output_dir=output_models/finetune
 deepspeed_args="--master_port=11000"
@@ -71,6 +71,6 @@ deepspeed ${deepspeed_args} \
     --ddp_timeout 72000 \
     --save_steps 5000 \
     --dataloader_num_workers 1 \
-    --preprocessing_num_workers 128 \
+    --preprocessing_num_workers 2 \
     | tee ${log_dir}/train.log \
     2> ${log_dir}/train.err

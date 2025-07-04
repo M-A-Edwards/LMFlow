@@ -18,7 +18,8 @@ import sys
 import os
 script_dir = os.path.abspath(os.path.dirname(sys.argv[0])) 
 if script_dir in sys.path:
-    sys.path.remove(script_dir)from transformers import HfArgumentParser 
+    sys.path.remove(script_dir)
+from transformers import HfArgumentParser 
 
 from lmflow.args import (
     ModelArguments,

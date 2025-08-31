@@ -63,7 +63,7 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --lora_target_modules="embed_tokens,q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj,lm_head" \
     --save_aggregated_lora 0 \
     --deepspeed configs/ds_config_zero0_no_offload.json \
-    --fp16 \
+    --bf16 \
     --gradient_accumulation_steps 4 \
     --gradient_checkpointing True \
     --run_name ${exp_id} \

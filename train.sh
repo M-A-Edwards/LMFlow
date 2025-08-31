@@ -64,6 +64,9 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --save_aggregated_lora 0 \
     --deepspeed configs/ds_config_zero0_no_offload.json \
     --fp16 \
+    --gradient_accumulation_steps 4 \
+    --gradient_checkpointing True \
+    --gradient_clipping 1.0 \
     --run_name ${exp_id} \
     --validation_split_percentage 0 \
     --logging_steps 20 \

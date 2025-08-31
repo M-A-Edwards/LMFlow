@@ -48,7 +48,7 @@ project_dir=$(cd "$(dirname $0)"/..; pwd)
 log_dir=${project_dir}/log/${exp_id}
 mkdir -p ${output_dir} ${log_dir}
 
-deepspeed ${deepspeed_args} \
+deepspeed --num_gpus=2 ${deepspeed_args} \
   examples/finetune.py \
     --model_name_or_path ${model_name_or_path} \
     --trust_remote_code ${trust_remote_code} \

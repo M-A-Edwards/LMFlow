@@ -55,10 +55,9 @@ deepspeed ${deepspeed_args} \
     --dataset_path ${dataset_path} \
     --output_dir ${output_dir} --overwrite_output_dir \
     --num_train_epochs 1 \
-    --learning_rate 1e-4 \
+    --learning_rate 1e-5 \
     --block_size 1024 \
     --per_device_train_batch_size 4 \
-    --gradient_accumulation_steps 6 \
     --use_dora 1 \
     --lora_r 16 \
     --lora_target_modules="embed_tokens,q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj,lm_head" \

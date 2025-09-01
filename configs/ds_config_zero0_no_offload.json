@@ -1,6 +1,6 @@
 {
     "fp16": {
-        "enabled": false,
+        "enabled": true,
         "loss_scale": 0,
         "loss_scale_window": 1000,
         "initial_scale_power": 16,
@@ -9,7 +9,7 @@
     },
 
     "bf16": {
-        "enabled": true
+        "enabled": false
     },
 
     "zero_optimization": {
@@ -22,10 +22,10 @@
         "contiguous_gradients": true
     },
 
-    "gradient_accumulation_steps": 4,
-    "gradient_clipping": 1.0,
+    "gradient_accumulation_steps": "auto",
+    "gradient_clipping": "auto",
     "steps_per_print": 2000,
     "train_batch_size": "auto",
-    "train_micro_batch_size_per_gpu": 1,
+    "train_micro_batch_size_per_gpu": "auto",
     "wall_clock_breakdown": false
 }

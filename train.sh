@@ -3,7 +3,7 @@
 
 # Parses arguments
 model_name_or_path=data4elm/Llama-400M-12L
-dataset_path=./data/wikitext-2-raw-v1
+dataset_path=/kaggle/input/try1-heurstic/filtered_climblab
 # conversation_template=llama2
 output_dir=output_models/finetune
 deepspeed_args="--master_port=11000"

@@ -3,7 +3,7 @@
 
 # Parses arguments
 model_name_or_path=data4elm/Llama-400M-12L
-dataset_path=/kaggle/input/jsonheuristicadv/lmflow_dataset
+dataset_path=/kaggle/input/dfc2tfc1
 # conversation_template=llama2
 output_dir=output_models/finetune
 deepspeed_args="--master_port=11000"
@@ -53,7 +53,6 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --model_name_or_path ${model_name_or_path} \
     --trust_remote_code ${trust_remote_code} \
     --dataset_path ${dataset_path} \
-    --conversation_template chatml \
     --output_dir ${output_dir} --overwrite_output_dir \
     --num_train_epochs 1 \
     --learning_rate 1e-5 \

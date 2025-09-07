@@ -68,7 +68,7 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --gradient_checkpointing True \
     --run_name ${exp_id} \
     --validation_split_percentage 5 \
-    --eval_strategy steps \ 
+    --eval_strategy steps \
     --eval_steps 20 \
     --logging_steps 20 \
     --do_train \

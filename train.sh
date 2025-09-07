@@ -53,6 +53,7 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --model_name_or_path ${model_name_or_path} \
     --trust_remote_code ${trust_remote_code} \
     --dataset_path ${dataset_path} \
+    --conversation_template chatml \
     --output_dir ${output_dir} --overwrite_output_dir \
     --num_train_epochs 1 \
     --learning_rate 1e-5 \

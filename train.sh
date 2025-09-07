@@ -64,10 +64,12 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --save_aggregated_lora 0 \
     --deepspeed configs/ds_config_zero0_no_offload.json \
     --fp16 \
-    --gradient_accumulation_steps 1 \
+    --gradient_accumulation_steps 4 \
     --gradient_checkpointing True \
     --run_name ${exp_id} \
-    --validation_split_percentage 0 \
+    --validation_split_percentage 5 \
+    --eval_strategy steps \
+    --eval_steps 20 \
     --logging_steps 20 \
     --do_train \
     --ddp_timeout 72000 \
@@ -75,6 +77,6 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --save_steps 1000 \
     --save_total_limit 3 \
     --dataloader_num_workers 1 \
-    --preprocessing_num_workers 8 \
+    --preprocessing_num_workers 12 \
     | tee ${log_dir}/train.log \
     2> ${log_dir}/train.err

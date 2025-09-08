@@ -68,11 +68,11 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --gradient_checkpointing True \
     --run_name ${exp_id} \
     --validation_split_percentage 0 \
-    --logging_steps 20 \
+    --logging_steps 100 \
     --do_train \
     --ddp_timeout 72000 \
     --save_strategy steps \
-    --save_steps 500 \
+    --save_steps 1000 \
     --save_total_limit 3 \
     --dataloader_num_workers 1 \
     --preprocessing_num_workers 12 \

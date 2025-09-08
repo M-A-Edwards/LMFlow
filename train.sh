@@ -3,7 +3,7 @@
 
 # Parses arguments
 model_name_or_path=data4elm/Llama-400M-12L
-dataset_path=/kaggle/input/dfcf1-base-all20rf
+dataset_path=/kaggle/input/dfctf14/lmflow_dataset
 # conversation_template=llama2
 output_dir=output_models/finetune
 deepspeed_args="--master_port=11000"
@@ -72,7 +72,7 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --do_train \
     --ddp_timeout 72000 \
     --save_strategy steps \
-    --save_steps 1000 \
+    --save_steps 500 \
     --save_total_limit 3 \
     --dataloader_num_workers 1 \
     --preprocessing_num_workers 12 \

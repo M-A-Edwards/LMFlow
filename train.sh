@@ -67,9 +67,7 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --gradient_accumulation_steps 4 \
     --gradient_checkpointing True \
     --run_name ${exp_id} \
-    --validation_split_percentage 5 \
-    --eval_strategy steps \
-    --eval_steps 20 \
+    --validation_split_percentage 0 \
     --logging_steps 20 \
     --do_train \
     --ddp_timeout 72000 \

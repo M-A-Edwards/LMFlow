@@ -3,7 +3,7 @@
 
 # Parses arguments
 model_name_or_path=data4elm/Llama-400M-12L
-dataset_path=/kaggle/input/dfc2tfall
+dataset_path=/kaggle/input/rage-and-reason/lmflow_dataset
 # conversation_template=llama2
 output_dir=output_models/finetune
 deepspeed_args="--master_port=11000"
@@ -64,7 +64,7 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --save_aggregated_lora 0 \
     --deepspeed configs/ds_config_zero0_no_offload.json \
     --fp16 \
-    --gradient_accumulation_steps 4 \
+    --gradient_accumulation_steps 1 \
     --gradient_checkpointing True \
     --run_name ${exp_id} \
     --validation_split_percentage 0 \
@@ -72,7 +72,7 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --do_train \
     --ddp_timeout 72000 \
     --save_strategy steps \
-    --save_steps 1000 \
+    --save_steps 100 \
     --save_total_limit 3 \
     --dataloader_num_workers 1 \
     --preprocessing_num_workers 12 \

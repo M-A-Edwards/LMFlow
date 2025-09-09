@@ -3,7 +3,7 @@
 
 # Parses arguments
 model_name_or_path=data4elm/Llama-400M-12L
-dataset_path=/kaggle/input/finalv2
+dataset_path=data4elm/ELMB-FunctionCalling
 # conversation_template=llama2
 output_dir=output_models/finetune
 deepspeed_args="--master_port=11000"
@@ -64,7 +64,7 @@ deepspeed --num_gpus=2 ${deepspeed_args} \
     --save_aggregated_lora 0 \
     --deepspeed configs/ds_config_zero0_no_offload.json \
     --fp16 \
-    --gradient_accumulation_steps 1 \
+    --gradient_accumulation_steps 4 \
     --gradient_checkpointing True \
     --run_name ${exp_id} \
     --validation_split_percentage 0 \

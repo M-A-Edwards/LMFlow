@@ -3,7 +3,7 @@
 
 # Parses arguments
 model_name_or_path=data4elm/Llama-400M-12L
-dataset_path=/kaggle/input/justreason
+dataset_path=/kaggle/input/justrole
 # conversation_template=llama2
 output_dir=output_models/finetune
 deepspeed_args="--master_port=11000"
